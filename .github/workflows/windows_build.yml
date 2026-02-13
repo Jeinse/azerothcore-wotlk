@@ -23,7 +23,6 @@ jobs:
     name: ${{ matrix.os }}
     env:
       BOOST_ROOT: C:\local\boost_1_82_0
-    if: 
     steps:
       - uses: actions/checkout@v4
       - name: ccache
@@ -39,3 +38,11 @@ jobs:
         run: |
           export CTOOLS_BUILD=all
           ./acore.sh compiler build
+      - name: 二进制文件打包
+        run: |
+          zip -r ../out.zip D:/a/azerothcore-wotlk/azerothcore-wotlk/env/dist
+      - name: 上传工件
+        uses: actions/upload-artifact@v3
+        with:
+          name: out-files
+          path: ../out.zip
