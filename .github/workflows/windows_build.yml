@@ -39,8 +39,10 @@ jobs:
           export CTOOLS_BUILD=all
           ./acore.sh compiler build
       - name: 二进制文件打包
-        run: |
-          zip -r ../out.zip D:/a/azerothcore-wotlk/azerothcore-wotlk/env/dist
+        uses: TheDoctor0/zip-release@0.7.6
+        with:
+          filename: ../out.zip
+          path: D：/a/a/azerothcore-wotlk/azerothcore-wotlk/env/dist
       - name: 上传工件
         uses: actions/upload-artifact@v6.0.0
         with:
