@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - 'master'
-      workflow_dispatch: # 允许手动触发该工作流
+  workflow_dispatch: # 允许手动触发该工作流
   pull_request:
     types:
       - labeled
