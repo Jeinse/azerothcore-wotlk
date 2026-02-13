@@ -42,7 +42,7 @@ jobs:
         run: |
           zip -r ../out.zip D:/a/azerothcore-wotlk/azerothcore-wotlk/env/dist
       - name: 上传工件
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: out-files
           path: ../out.zip
